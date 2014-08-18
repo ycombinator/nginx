@@ -18,7 +18,7 @@
   when: ansible_os_family == "Debian"
 
 - name: Install the nginx packages
-  apt: name={{ item }} state=present update_cache=yes
+  apt: name={{ item }} state=present update_cache=yes force=yes
   with_items: ubuntu_pkg
   environment: env
   when: ansible_os_family == "Debian"
